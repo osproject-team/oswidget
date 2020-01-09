@@ -1,11 +1,13 @@
 <template>
   <div id="app">
+    <Loading :loading="loading"/>
     <Places :places="places"/>
   </div>
 </template>
 
 <script>
-import Places from './components/Places/index.vue';
+import Places from './components/pages/Places/index.vue';
+import Loading from './components/pages/Loading/index.vue';
 
 const getPlaces = require('./places.json');
 
@@ -13,11 +15,18 @@ export default {
   name: 'app',
   components: {
     Places,
+    Loading,
   },
   data() {
     return {
       places: getPlaces,
+      loading: false,
     };
+  },
+  mounted() {
+    setTimeout(() => {
+      this.loading = true;
+    }, 3000);
   },
 };
 </script>
@@ -26,12 +35,6 @@ export default {
 body {
   margin: 0;
   padding: 0;
-}
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  color: #4A4A4A;
 }
 </style>

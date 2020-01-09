@@ -1,7 +1,9 @@
 <template>
-<svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" style="overflow: visible;" v-on-resize="onResize">
-  <slot/>
-</svg>
+<section class="schame-wrapper">
+  <svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" v-on-resize="onResize">
+    <slot/>
+  </svg>
+</section>
 </template>
 
 <script>
@@ -40,8 +42,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.schame-wrapper {
+  position: relative;
+}
 .scheme {
-  height: 80vh;
-  width: 80vw;
+  height: 95vh;
+  width: 100vw;
 }
 </style>

@@ -48,7 +48,7 @@ export default {
 <style scoped lang="scss">
 .wrapper {
   background: #f7f7f7;
-  height: 100vh;
+  height: 95vh;
   width: 100vw;
   display: flex;
   align-items: center;
