@@ -3,7 +3,7 @@
     <h3 class="loading-title"><b>OS</b>widget</h3>
     <div class="loading-content">
       <div class="loading-loader">
-        <img src="@/assets/images/loading.svg" alt="">
+        <img src="@/assets/images/loading.svg" class="loading-image" alt="">
       </div>
       <span class="loading-text">Seats loading...</span>
     </div>
@@ -35,7 +35,7 @@ export default {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background: linear-gradient(309.99deg, #FF0000 0.63%, #FF712F 76.35%), #FFFFFF;
+  background: linear-gradient(309.99deg, $red 0.63%, $orange 76.35%), #FFFFFF;
   z-index: 100;
   text-align: center;
 }
@@ -53,16 +53,16 @@ export default {
   color: white;
   font-size: 20px;
   font-weight: 700;
-  margin-top: 43px;
 }
 .loading-loader {
   position: relative;
-  img {
-    animation-name: rotation;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
+  margin-bottom: 43px;
+}
+.loading-image {
+  animation-name: rotation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 @keyframes rotation {
   0% {

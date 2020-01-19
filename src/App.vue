@@ -1,13 +1,15 @@
 <template>
   <div id="app">
+    <Navbar/>
     <Loading :loading="loading"/>
     <Places :places="places"/>
   </div>
 </template>
 
 <script>
-import Places from './components/pages/Places/index.vue';
-import Loading from './components/pages/Loading/index.vue';
+import Places from '@/components/views/Places/index.vue';
+import Navbar from '@/components/layout/Navbar/index.vue';
+import Loading from '@/components/views/Loading/index.vue';
 
 const getPlaces = require('./places.json');
 
@@ -16,6 +18,7 @@ export default {
   components: {
     Places,
     Loading,
+    Navbar,
   },
   data() {
     return {
@@ -32,9 +35,8 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  margin: 0;
-  padding: 0;
-  color: #4A4A4A;
+#app {
+  overflow: hidden;
+  max-height: 100vh;
 }
 </style>
