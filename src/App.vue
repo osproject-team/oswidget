@@ -3,12 +3,14 @@
     <Navbar/>
     <Loading :loading="loading"/>
     <Places :places="places"/>
+    <Sidebar v-if="true">sidebar</Sidebar>
   </div>
 </template>
 
 <script>
 import Places from '@/components/views/Places/index.vue';
 import Navbar from '@/components/layout/Navbar/index.vue';
+import Sidebar from '@/components/layout/Sidebar/index.vue';
 import Loading from '@/components/views/Loading/index.vue';
 
 const getPlaces = require('./places.json');
@@ -19,6 +21,7 @@ export default {
     Places,
     Loading,
     Navbar,
+    Sidebar,
   },
   data() {
     return {
