@@ -3,13 +3,27 @@
     <div class="navbar-title">
       Checkout
     </div>
-    <div class="navbar-gamburger">
-      <a href="#">
-        <img src="@/assets/images/gamburger.svg" alt="gamburger">
-      </a>
-    </div>
+    <button class="navbar-gamburger" @click="toggleSidebar">
+      <img src="@/assets/images/gamburger.svg" alt="gamburger">
+    </button>
   </header>
 </template>
+<script>
+export default {
+  name: 'Navbar',
+  props: {},
+  components: {},
+  data() {
+    return {};
+  },
+  methods: {
+    toggleSidebar() {
+      this.$store.dispatch('app/toogleSidebar');
+    },
+  },
+  mounted() {},
+};
+</script>
 <style scoped lang="scss">
 .navbar {
   height: $navbarHeight;
@@ -26,5 +40,10 @@
 }
 .navbar-gamburger {
   flex-grow: 0;
+  background: none;
+  border: none;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 </style>

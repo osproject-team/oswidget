@@ -3,18 +3,18 @@
     <Navbar/>
     <Loading :loading="loading"/>
     <Places :places="places"/>
-    <Sidebar v-if="false">
+    <Sidebar>
       <Checkout/>
     </Sidebar>
   </div>
 </template>
 
 <script>
-import Places from '@/components/views/Places/index.vue';
-import Navbar from '@/components/layout/Navbar/index.vue';
-import Sidebar from '@/components/layout/Sidebar/index.vue';
-import Checkout from '@/components/views/Checkout/index.vue';
-import Loading from '@/components/views/Loading/index.vue';
+import Places from '@/views/Places/index.vue';
+import Navbar from '@/layout/Navbar/index.vue';
+import Sidebar from '@/layout/Sidebar/index.vue';
+import Checkout from '@/views/Checkout/index.vue';
+import Loading from '@/views/Loading/index.vue';
 
 const getPlaces = require('./places.json');
 
