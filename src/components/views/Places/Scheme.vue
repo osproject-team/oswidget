@@ -32,21 +32,31 @@ export default {
       scheme.resize();
       scheme.fit();
       scheme.center();
+      this.addPadding();
+    },
+    addPadding() {
+      const scheme = svgPanZoom(this.$refs.schame);
+      scheme.zoomBy(0.9);
+      scheme.center();
     },
   },
   mounted() {
     this.registerSVG();
+    this.addPadding();
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .schame-wrapper {
-  position: relative;
+  position: fixed;
+  top: $navbarHeight;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .scheme {
-  height: 95vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 </style>
