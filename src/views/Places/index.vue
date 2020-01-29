@@ -47,7 +47,7 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
-  background: #f7f7f7;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 79.17%), #FFFFFF;
   height: 95vh;
   width: 100vw;
   display: flex;
