@@ -1,5 +1,10 @@
 <template>
 <section class="schame-wrapper">
+  <div class="schame-button">
+    <button class="button">
+      <span>2500 $ | Checkout</span>
+    </button>
+  </div>
   <svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" v-on-resize="onResize">
     <slot/>
   </svg>
@@ -40,7 +45,7 @@ export default {
     },
     addPadding() {
       const scheme = svgPanZoom(this.$refs.schame);
-      scheme.zoomBy(0.9);
+      scheme.zoomBy(0.7);
       scheme.center();
     },
     zoom(val) {
@@ -66,5 +71,13 @@ export default {
 .scheme {
   height: 100%;
   width: 100%;
+}
+.schame-button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 </style>
