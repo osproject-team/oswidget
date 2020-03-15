@@ -2,6 +2,7 @@
   <div id="app">
     <Navbar/>
     <Loading :loading="loading"/>
+    <Logo/>
     <Places :places="places"/>
     <Sidebar>
       <Checkout/>
@@ -13,10 +14,11 @@
 import Places from '@/views/Places/index.vue';
 import Navbar from '@/layout/Navbar/index.vue';
 import Sidebar from '@/layout/Sidebar/index.vue';
+import Logo from '@/components/Logo.vue';
 import Checkout from '@/views/Checkout/index.vue';
 import Loading from '@/views/Loading/index.vue';
 
-const getPlaces = require('./places.json');
+const getPlaces = require('./places_small.json');
 
 export default {
   name: 'app',
@@ -26,16 +28,17 @@ export default {
     Navbar,
     Sidebar,
     Checkout,
+    Logo,
   },
   data() {
     return {
       places: getPlaces,
-      loading: false,
+      loading: true,
     };
   },
   mounted() {
     setTimeout(() => {
-      this.loading = true;
+      this.loading = false;
     }, 3000);
   },
 };

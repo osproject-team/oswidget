@@ -2,11 +2,11 @@
   <div class="checkout">
     <div class="checkout-age">12+</div>
     <div class="checkout-title">
-      Tesla Boy
+      Swan Lake
     </div>
     <div class="checkout-subtitle">
-      <div>Сб, 18 апреля, 20:00</div>
-      <div>Москва, Известия Hall</div>
+      <div>Sun, Feb 23, 8:30 PM</div>
+      <div>Bolshoi Theater</div>
     </div>
   </div>
 </template>
@@ -26,8 +26,8 @@
   margin-bottom: 15px;
 }
 .checkout-subtitle {
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 22px;
   font-weight: 500;
 }
 </style>

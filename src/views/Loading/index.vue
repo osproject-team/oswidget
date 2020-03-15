@@ -1,13 +1,15 @@
 <template>
-  <div :class="['loading', { 'completed': loading }]">
-    <h3 class="loading-title"><b>OS</b>widget</h3>
-    <div class="loading-content">
-      <div class="loading-loader">
-        <img src="@/assets/images/loading.svg" class="loading-image" alt="">
+  <transition name="fade">
+    <div v-if="loading" class="loading">
+      <h3 class="loading-title"><b>OS</b>widget</h3>
+      <div class="loading-content">
+        <div class="loading-loader">
+          <img src="@/assets/images/loading.svg" class="loading-image" alt="">
+        </div>
+        <span class="loading-text">Seats loading...</span>
       </div>
-      <span class="loading-text">Seats loading...</span>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -64,29 +66,13 @@ export default {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+
 @keyframes rotation {
   0% {
     transform:rotate(0deg);
   }
   100% {
     transform:rotate(360deg);
-  }
-}
-.completed {
-  animation-name: completed;
-  animation-duration: 1s;
-  opacity: 0;
-  display: none;
-}
-
-@keyframes completed {
-  0% {
-    opacity: 1;
-    display: block;
-  }
-  100% {
-    opacity: 0;
-    display: none;
   }
 }
 </style>

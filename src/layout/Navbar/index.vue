@@ -1,7 +1,8 @@
 <template>
   <header class="navbar">
-    <div class="navbar-title">
-      Checkout
+    <div class="navbar-text">
+      <div class="navbar-title">Swan Lake</div>
+      <div class="navbar-subtitle">Sun, Feb 23, 8:30 PM</div>
     </div>
     <button class="navbar-gamburger" @click="toggleSidebar">
       <img src="@/assets/images/gamburger.svg" alt="gamburger">
@@ -32,11 +33,18 @@ export default {
   align-items: center;
   padding: 0 30px;
 }
+.navbar-text {
+  color: white;
+  flex-grow: 1;
+}
 .navbar-title {
   font-weight: bold;
-  color: white;
   font-size: 18px;
-  flex-grow: 1;
+  margin-bottom: 4px;
+}
+.navbar-subtitle {
+  font-size: 12px;
+  font-weight: 500;
 }
 .navbar-gamburger {
   flex-grow: 0;
