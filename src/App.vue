@@ -18,7 +18,7 @@ import Logo from '@/components/Logo.vue';
 import Checkout from '@/views/Checkout/index.vue';
 import Loading from '@/views/Loading/index.vue';
 
-const getPlaces = require('./places_small.json');
+const getPlaces = require('./places.json');
 
 export default {
   name: 'app',

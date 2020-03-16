@@ -1,15 +1,15 @@
 <template>
-<section class="schame-wrapper">
-  <div class="schame-button">
-    <button class="button">
-      <span>2500 $ | Checkout</span>
-    </button>
-  </div>
-  <svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" v-on-resize="onResize">
-    <slot/>
-  </svg>
-  <Zoom @zoomIn="zoom(1.2)" @zoomOut="zoom(0.8)"/>
-</section>
+  <section class="schame-wrapper">
+    <div class="schame-button">
+      <button class="button">
+        <span>2500 $ | Checkout</span>
+      </button>
+    </div>
+    <svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" v-on-resize="onResize">
+      <slot/>
+    </svg>
+    <Zoom @zoomIn="zoom(1.2)" @zoomOut="zoom(0.8)"/>
+  </section>
 </template>
 
 <script>
@@ -19,7 +19,6 @@ import Zoom from '@/components/Zoom/index.vue';
 
 export default {
   name: 'Scheme',
-  props: {},
   directives: {
     'on-resize': resize,
   },

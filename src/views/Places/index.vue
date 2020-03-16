@@ -1,21 +1,23 @@
 <template>
 <div class="wrapper">
-  <svg-scheme>
+  <Filters :colors="colors"/>
+  <Scheme>
     <g v-for="(level, index) in places.levels" :key="`level-${index}`">
-      <circle-place
+      <Place
         :place="place"
         :color="colors[index]"
         v-for="(place, key) in level.seats"
         :key="key"
       />
     </g>
-  </svg-scheme>
+  </Scheme>
 </div>
 </template>
 
 <script>
 import Place from './Place.vue';
 import Scheme from './Scheme.vue';
+import Filters from '@/components/Filters/index.vue';
 
 export default {
   name: 'places',
@@ -23,8 +25,9 @@ export default {
     places: Object,
   },
   components: {
-    'circle-place': Place,
-    'svg-scheme': Scheme,
+    Place,
+    Scheme,
+    Filters,
   },
   data() {
     return {

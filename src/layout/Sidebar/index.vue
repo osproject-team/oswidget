@@ -30,6 +30,7 @@ export default {
 .sidebar {
   position: fixed;
   display: block;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
