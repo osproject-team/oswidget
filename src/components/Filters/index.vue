@@ -1,5 +1,5 @@
 <template>
-  <div class="prices">
+  <div class="filters">
     <Price
       v-for="(item, index) in prices"
       :key="index"
@@ -12,7 +12,7 @@
 import Price from './Price.vue';
 
 export default {
-  name: 'Prices',
+  name: 'Filters',
   components: {
     Price,
   },
@@ -22,7 +22,6 @@ export default {
       required: true,
     },
   },
-  computed: {},
   data() {
     return {
       prices: [
@@ -33,11 +32,10 @@ export default {
       ],
     };
   },
-  methods: {},
 };
 </script>
 <style scoped lang="scss">
-.prices {
+.filters {
   position: fixed;
   z-index: 1;
   top: $navbarHeight;

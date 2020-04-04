@@ -22,7 +22,10 @@ import Filters from '@/components/Filters/index.vue';
 export default {
   name: 'places',
   props: {
-    places: Object,
+    places: {
+      type: Object,
+      required: true,
+    },
   },
   components: {
     Place,

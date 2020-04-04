@@ -3,7 +3,7 @@
     <Navbar/>
     <Loading :loading="loading"/>
     <Logo/>
-    <Places :places="places"/>
+    <Places v-if="places" :places="places"/>
     <Sidebar>
       <Checkout/>
     </Sidebar>
@@ -18,8 +18,6 @@ import Logo from '@/components/Logo.vue';
 import Checkout from '@/views/Checkout/index.vue';
 import Loading from '@/views/Loading/index.vue';
 
-const getPlaces = require('./places.json');
-
 export default {
   name: 'app',
   components: {
@@ -32,14 +30,22 @@ export default {
   },
   data() {
     return {
-      places: getPlaces,
+      places: null,
       loading: true,
     };
   },
   mounted() {
-    setTimeout(() => {
-      this.loading = false;
-    }, 3000);
+    this.$axios
+      .get('examples/places.json')
+      .then((response) => {
+        this.places = response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   },
 };
 </script>

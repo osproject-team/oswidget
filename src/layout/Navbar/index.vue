@@ -1,10 +1,10 @@
 <template>
   <header class="navbar">
-    <div class="navbar-text">
-      <div class="navbar-title">Swan Lake</div>
-      <div class="navbar-subtitle">Sun, Feb 23, 8:30 PM</div>
+    <div class="navbar__text">
+      <div class="navbar__title">Swan Lake</div>
+      <div class="navbar__subtitle">Sun, Feb 23, 8:30 PM</div>
     </div>
-    <button class="navbar-gamburger" @click="toggleSidebar">
+    <button class="navbar__gamburger" @click="toggleSidebar">
       <img src="@/assets/images/gamburger.svg" alt="gamburger">
     </button>
   </header>
@@ -12,17 +12,11 @@
 <script>
 export default {
   name: 'Navbar',
-  props: {},
-  components: {},
-  data() {
-    return {};
-  },
   methods: {
     toggleSidebar() {
       this.$store.dispatch('app/toogleSidebar');
     },
   },
-  mounted() {},
 };
 </script>
 <style scoped lang="scss">
@@ -33,20 +27,20 @@ export default {
   align-items: center;
   padding: 0 30px;
 }
-.navbar-text {
+.navbar__text {
   color: white;
   flex-grow: 1;
 }
-.navbar-title {
+.navbar__title {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 4px;
 }
-.navbar-subtitle {
+.navbar__subtitle {
   font-size: 12px;
   font-weight: 500;
 }
-.navbar-gamburger {
+.navbar__gamburger {
   flex-grow: 0;
   background: none;
   border: none;

@@ -1,13 +1,13 @@
 <template>
   <transition name="sidebar-slide">
     <div v-if="sidebar" class="sidebar">
-      <div class="sidebar-wrapper">
-        <button class="sidebar-close" @click="toggleSidebar">
+      <div class="sidebar__wrapper">
+        <button class="sidebar__close" @click="toggleSidebar">
           <img src="@/assets/images/arrow-back.svg" alt="back">
         </button>
         <slot/>
       </div>
-      <div class="sidebar-fade" @click="toggleSidebar"></div>
+      <div class="sidebar__fade" @click="toggleSidebar"></div>
     </div>
   </transition>
 </template>
@@ -36,19 +36,18 @@ export default {
   left: 0;
   right: 0;
 }
-.sidebar-wrapper {
+.sidebar__wrapper {
   position: absolute;
   top: 0;
   right: 0;
   background: $gray-light;
-  // padding: 30px;
   width: 45vw;
   height: 100%;
   max-width: 410px;
   z-index: 1;
   box-shadow: 0px 0 30px rgba(0, 0, 0, 0.4);
 }
-.sidebar-close {
+.sidebar__close {
   position: absolute;
   top: 0;
   right: 0;
@@ -56,7 +55,7 @@ export default {
   background: none;
   border: 0;
 }
-.sidebar-fade {
+.sidebar__fade {
   position: absolute;
   background: #404040;
   opacity: 0.7;
@@ -67,12 +66,12 @@ export default {
 }
 
 .sidebar-slide-enter-active, .sidebar-slide-leave-active {
-  .sidebar-fade {
+  .sidebar__fade {
     transition: opacity .5s;
   }
 }
 .sidebar-slide-enter, .sidebar-slide-leave-to {
-  .sidebar-fade {
+  .sidebar__fade {
     opacity: 0;
   }
 }

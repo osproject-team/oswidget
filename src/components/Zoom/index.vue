@@ -8,15 +8,6 @@
 <script>
 export default {
   name: 'Zoom',
-  props: {},
-  components: {},
-  data() {
-    return {};
-  },
-  methods: {
-
-  },
-  mounted() {},
 };
 </script>
 
