@@ -32,6 +32,7 @@ export default {
     return {
       places: null,
       loading: true,
+      error: null,
     };
   },
   mounted() {
@@ -41,7 +42,7 @@ export default {
         this.places = response.data;
       })
       .catch((error) => {
-        console.error(error);
+        this.error = error;
       })
       .finally(() => {
         this.loading = false;
