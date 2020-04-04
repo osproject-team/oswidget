@@ -59,7 +59,7 @@ export default {
 
 <style scoped lang="scss">
 .schame-wrapper {
-  position: fixed;
+  position: absolute;
   top: $navbarHeight;
   bottom: 0;
   left: 0;
@@ -70,12 +70,13 @@ export default {
   width: 100%;
 }
 .schame-button {
-  position: fixed;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 30px;
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 .checkout {
   margin-left: 10px;
