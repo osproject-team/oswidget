@@ -1,37 +1,61 @@
 <template>
   <div id="app">
-    <Places :places="places"/>
+    <Navbar/>
+    <Loading :loading="loading"/>
+    <Logo/>
+    <Places v-if="places" :places="places"/>
+    <Sidebar>
+      <Checkout/>
+    </Sidebar>
   </div>
 </template>
 
 <script>
-import Places from './components/Places/index.vue';
-
-const getPlaces = require('./places.json');
+import Places from '@/views/Places/index.vue';
+import Navbar from '@/layout/Navbar/index.vue';
+import Sidebar from '@/layout/Sidebar/index.vue';
+import Logo from '@/components/Logo.vue';
+import Checkout from '@/views/Checkout/index.vue';
+import Loading from '@/views/Loading/index.vue';
 
 export default {
   name: 'app',
   components: {
     Places,
+    Loading,
+    Navbar,
+    Sidebar,
+    Checkout,
+    Logo,
   },
   data() {
     return {
-      places: getPlaces,
+      places: null,
+      loading: true,
     };
+  },
+  mounted() {
+    this.$axios
+      .get('examples/places.json')
+      .then((response) => {
+        this.places = response.data;
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+      .finally(() => {
+        this.loading = false;
+      });
   },
 };
 </script>
 
 <style lang="scss">
-body {
-  margin: 0;
-  padding: 0;
-}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  overflow: hidden;
+  max-height: 100vh;
+  b {
+    font-weight: bold;
+  }
 }
 </style>
