@@ -1,5 +1,5 @@
 <template>
-  <div :class="['wrapper', { 'selected': selected }]" @click="toggle">
+  <div :class="{ selected: selected, row: true }" @click="toggle">
     <div class="color" :style="{ background: color }"></div>
     <div class="price">{{ price }}</div>
     <img v-if="selected" src="@/assets/images/close.svg" alt="close" class="close">
@@ -36,7 +36,7 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.wrapper {
+.row {
   display: flex;
   align-items: center;
   height: 27px;
@@ -44,10 +44,18 @@ export default {
   cursor: pointer;
   transition: all .3s;
 }
+.row:not(.selected) {
+  &:hover {
+    .color {
+      transform: scale(1.1);
+    }
+  }
+}
 .color {
   height: 15px;
   width: 15px;
   border-radius: 50%;
+  transition: all .3s;
 }
 .price {
   font-size: 14px;

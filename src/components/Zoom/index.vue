@@ -1,7 +1,7 @@
 <template>
 <div class="zoom">
-  <button @click="$emit('zoomIn')" class="circle-btn zoom-btn">+</button>
-  <button @click="$emit('zoomOut')" class="circle-btn zoom-btn">-</button>
+  <button @click="$emit('zoomIn')" class="button-circle zoom__button">+</button>
+  <button @click="$emit('zoomOut')" class="button-circle zoom__button">-</button>
 </div>
 </template>
 
@@ -27,8 +27,10 @@ export default {
   left: 30px;
   display: block;
 }
-.zoom-btn {
+.zoom__button {
   display: block;
   margin: 20px 0;
+  line-height: 0;
+  font-size: 30px;
 }
 </style>

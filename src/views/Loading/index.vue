@@ -6,7 +6,7 @@
         <div class="loading-loader">
           <img src="@/assets/images/loading.svg" class="loading-image" alt="">
         </div>
-        <span class="loading-text">Seats loading...</span>
+        <span class="loading-message">{{ message }}</span>
       </div>
     </div>
   </transition>
@@ -14,15 +14,17 @@
 
 <script>
 export default {
-  name: 'place',
+  name: 'Loading',
   props: {
     loading: {
       type: Boolean,
       required: true,
     },
+    message: {
+      type: String,
+      default: 'Seats loading...',
+    },
   },
-  methods: {},
-  mounted() {},
 };
 </script>
 
@@ -47,11 +49,8 @@ export default {
   font-weight: 500;
   margin-top: 155px;
   margin-bottom: 155px;
-  b {
-    font-weight: 700;
-  }
 }
-.loading-text {
+.loading-message {
   color: white;
   font-size: 20px;
   font-weight: 700;

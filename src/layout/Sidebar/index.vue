@@ -40,8 +40,8 @@ export default {
   position: absolute;
   top: 0;
   right: 0;
-  background: white;
-  padding: 30px;
+  background: $gray-light;
+  // padding: 30px;
   width: 45vw;
   height: 100%;
   max-width: 410px;

@@ -1,7 +1,7 @@
 <template>
-  <div class="logo">
+  <a href="https://ooos.ru/oswidget" target="_blank" class="logo">
     <b>OS</b>widget
-  </div>
+  </a>
 </template>
 
 <script>
@@ -19,8 +19,12 @@ export default {
   line-height: 30px;
   color: #D6D6D6;
   font-weight: 500;
-  b {
-    font-weight: bold;
+  z-index: 1;
+  transition: all .3s;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    color: $gray;
   }
 }
 </style>

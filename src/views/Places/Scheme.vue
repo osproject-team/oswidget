@@ -1,8 +1,9 @@
 <template>
   <section class="schame-wrapper">
     <div class="schame-button">
-      <button class="button">
-        <span>2500 $ | Checkout</span>
+      <button class="button button-primary">
+        2500$ <span class="partition">|</span> Checkout
+        <img src="@/assets/images/next.svg" class="checkout" alt="checkout">
       </button>
     </div>
     <svg ref="schame" xmlns:xlink="http://www.w3.org/1999/xlink" class="scheme" v-on-resize="onResize">
@@ -24,9 +25,6 @@ export default {
   },
   components: {
     Zoom,
-  },
-  data() {
-    return {};
   },
   methods: {
     registerSVG() {
@@ -78,5 +76,14 @@ export default {
   bottom: 30px;
   display: flex;
   justify-content: center;
+}
+.checkout {
+  margin-left: 10px;
+  transform: translateY(-1px);
+}
+.partition {
+  color: black;
+  opacity: .1;
+  padding: 0 5px;
 }
 </style>

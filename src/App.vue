@@ -48,5 +48,8 @@ export default {
 #app {
   overflow: hidden;
   max-height: 100vh;
+  b {
+    font-weight: bold;
+  }
 }
 </style>

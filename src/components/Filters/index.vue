@@ -41,10 +41,8 @@ export default {
   position: fixed;
   z-index: 1;
   top: $navbarHeight;
-  left: 0;
-  right: 0;
-  padding: 15px 0;
-  max-width: 50vw;
+  padding: 15px;
+  min-width: 50vw;
   margin: 0 auto;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;
