@@ -27,69 +27,85 @@ export default {
 };
 </script>
 <style scoped lang="scss">
-.sidebar {
-  position: fixed;
-  display: block;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.sidebar__wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: $gray-light;
-  width: 45vw;
-  height: 100%;
-  max-width: 410px;
-  z-index: 1;
-  box-shadow: 0px 0 30px rgba(0, 0, 0, 0.4);
-}
-.sidebar__close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 30px;
-  background: none;
-  border: 0;
-}
-.sidebar__fade {
-  position: absolute;
-  background: #404040;
-  opacity: 0.7;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  cursor: pointer;
-}
-
-.sidebar-slide-enter-active, .sidebar-slide-leave-active {
-  .sidebar__fade {
-    transition: opacity .5s;
-  }
-}
-.sidebar-slide-enter, .sidebar-slide-leave-to {
-  .sidebar__fade {
-    opacity: 0;
-  }
-}
-
-.sidebar-slide-enter-active {
-  animation: slide .5s;
-}
-.sidebar-slide-leave-active {
-  animation: slide .5s reverse;
-}
-
-@keyframes slide {
-  from {
-    right: -45vw;
-  }
-
-  to {
+  .sidebar {
+    position: fixed;
+    display: block;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
     right: 0;
   }
-}
+
+  .sidebar__wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $gray-light;
+    width: 45vw;
+    height: 100%;
+    max-width: 410px;
+    z-index: 1;
+    box-shadow: 0px 0 30px rgba(0, 0, 0, 0.4);
+
+    @include for-tablet {
+      width: 60vw;
+      max-width: 100%;
+    }
+
+    @include for-phone {
+      width: 100vw;
+    }
+  }
+
+  .sidebar__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    background: none;
+    border: 0;
+  }
+
+  .sidebar__fade {
+    position: absolute;
+    background: #404040;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    cursor: pointer;
+  }
+
+  .sidebar-slide-enter-active,
+  .sidebar-slide-leave-active {
+    .sidebar__fade {
+      transition: opacity .5s;
+    }
+  }
+
+  .sidebar-slide-enter,
+  .sidebar-slide-leave-to {
+    .sidebar__fade {
+      opacity: 0;
+    }
+  }
+
+  .sidebar-slide-enter-active {
+    animation: slide .5s;
+  }
+
+  .sidebar-slide-leave-active {
+    animation: slide .5s reverse;
+  }
+
+  @keyframes slide {
+    from {
+      right: -45vw;
+    }
+
+    to {
+      right: 0;
+    }
+  }
 </style>

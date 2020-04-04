@@ -36,11 +36,10 @@ export default {
 </script>
 <style scoped lang="scss">
 .filters {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: $navbarHeight;
   padding: 15px;
-  min-width: 50vw;
   margin: 0 auto;
   border-bottom-right-radius: 30px;
   border-bottom-left-radius: 30px;

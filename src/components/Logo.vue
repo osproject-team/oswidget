@@ -1,5 +1,5 @@
 <template>
-  <a href="https://ooos.ru/oswidget" target="_blank" class="logo">
+  <a href="https://osproject-team.github.io/oswidget/" target="_blank" class="logo">
     <b>OS</b>widget
   </a>
 </template>
@@ -23,8 +23,15 @@ export default {
   transition: all .3s;
   cursor: pointer;
   text-decoration: none;
+
   &:hover {
     color: $gray;
+  }
+
+  @include for-phone {
+    left: 0;
+    right: 0;
+    text-align: center;
   }
 }
 </style>

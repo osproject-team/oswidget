@@ -17,7 +17,11 @@ export default {
   top: 45vh;
   left: 30px;
   display: block;
+  @include for-phone {
+    top: 65vh;
+  }
 }
+
 .zoom__button {
   display: block;
   margin: 20px 0;
