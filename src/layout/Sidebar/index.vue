@@ -30,7 +30,7 @@ export default {
   .sidebar {
     position: fixed;
     display: block;
-    z-index: 1;
+    z-index: $sidebarIndex;
     top: 0;
     bottom: 0;
     left: 0;
@@ -62,9 +62,18 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    padding: 30px;
+    padding: $m-desktop;
     background: none;
     border: 0;
+    overflow: hidden;
+
+    @include for-tablet {
+      padding: $m-tablet;
+    }
+
+    @include for-phone {
+      padding: $m-phone;
+    }
   }
 
   .sidebar__fade {
@@ -75,37 +84,32 @@ export default {
     height: 100%;
     z-index: 0;
     cursor: pointer;
+    transition: opacity .5s;
   }
 
-  .sidebar-slide-enter-active,
-  .sidebar-slide-leave-active {
+  .sidebar-slide-enter-to {
+    right: 0;
+    transition: all .5s;
     .sidebar__fade {
-      transition: opacity .5s;
+      opacity: .7;
     }
   }
 
-  .sidebar-slide-enter,
-  .sidebar-slide-leave-to {
+  .sidebar-slide-leave-active,
+  .sidebar-slide-enter {
+    transition: all .5s;
+    right: -45vw;
+
+    @include for-tablet {
+      right: -60vw;
+    }
+
+    @include for-phone {
+      right: -100vw;
+    }
+
     .sidebar__fade {
       opacity: 0;
-    }
-  }
-
-  .sidebar-slide-enter-active {
-    animation: slide .5s;
-  }
-
-  .sidebar-slide-leave-active {
-    animation: slide .5s reverse;
-  }
-
-  @keyframes slide {
-    from {
-      right: -45vw;
-    }
-
-    to {
-      right: 0;
     }
   }
 </style>

@@ -15,10 +15,17 @@ export default {
 .zoom {
   position: fixed;
   top: 45vh;
-  left: 30px;
+  left: $m-desktop;
   display: block;
+
+  @include for-tablet {
+    left: $m-tablet;
+    top: 40vh;
+  }
+
   @include for-phone {
-    top: 65vh;
+    left: $m-phone;
+    top: 35vh;
   }
 }
 
@@ -26,6 +33,5 @@ export default {
   display: block;
   margin: 20px 0;
   line-height: 0;
-  font-size: 30px;
 }
 </style>

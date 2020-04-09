@@ -38,8 +38,18 @@ export default {
 }
 
 .checkout__wrapper {
-  padding: 30px;
-  padding-bottom: 220px;
+  padding: $m-desktop;
+  padding-bottom: $controlHeight-desktop + $m-desktop;
+
+  @include for-tablet {
+    padding: $m-tablet;
+    padding-bottom: $controlHeight-tablet + $m-tablet;
+  }
+
+  @include for-phone {
+    padding: $m-phone;
+    padding-bottom: $controlHeight-phone + $m-phone;
+  }
 }
 
 .checkout__age {

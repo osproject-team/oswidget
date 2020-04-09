@@ -1,13 +1,11 @@
 <template>
   <transition name="fade">
     <div v-if="loading" class="loading">
-      <h3 class="loading-title"><b>OS</b>widget</h3>
-      <div class="loading-content">
-        <div class="loading-loader">
-          <img src="@/assets/images/loading.svg" class="loading-image" alt="">
+        <div class="loading__wrapper">
+          <h2 class="loading__title"><b>OS</b>widget</h2>
+          <img src="@/assets/images/loading.svg" class="loading__loader" alt="">
+          <div class="loading__message">{{ message }}</div>
         </div>
-        <span class="loading-message">{{ message }}</span>
-      </div>
     </div>
   </transition>
 </template>
@@ -30,36 +28,35 @@ export default {
 
 <style scoped lang="scss">
 .loading {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   background: linear-gradient(309.99deg, $red 0.63%, $orange 76.35%), #FFFFFF;
   z-index: 100;
   text-align: center;
 }
-.loading-title {
+.loading__title {
   color: white;
   font-size: 45px;
   font-weight: 500;
-  margin-top: 155px;
-  margin-bottom: 155px;
+  margin-bottom: 25vh;
 }
-.loading-message {
+.loading__message {
   color: white;
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 50px;
 }
-.loading-loader {
-  position: relative;
-  margin-bottom: 43px;
+.loading__wrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10vh;
 }
-.loading-image {
+.loading__loader {
+  max-height: 70px;
   animation-name: rotation;
   animation-duration: 2s;
   animation-iteration-count: infinite;

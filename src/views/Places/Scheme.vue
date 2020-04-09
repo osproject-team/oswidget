@@ -31,7 +31,11 @@ export default {
       svgPanZoom(this.$refs.schame, {
         controlIconsEnabled: false,
         zoomScaleSensitivity: 0.2,
+        panBy: this.orederPlace,
       });
+    },
+    orederPlace(place) {
+      console.log('place', place);
     },
     onResize() {
       const scheme = svgPanZoom(this.$refs.schame);

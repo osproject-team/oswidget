@@ -46,5 +46,11 @@ export default {
   display: flex;
   justify-content: center;
   background: rgba(255, 255, 255, 0.9);
+
+  @include for-tablet {
+    left: 0;
+    right: 0;
+    overflow-x: scroll;
+  }
 }
 </style>

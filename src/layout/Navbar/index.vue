@@ -25,25 +25,39 @@ export default {
   background: linear-gradient(273.63deg, $red 0%, $orange 100%);
   display: flex;
   align-items: center;
-  padding: 0 30px;
+  padding: 0 $m-desktop;
+  @include for-tablet {
+    padding: 0 $m-tablet;
+  }
 }
+
 .navbar__text {
   color: white;
   flex-grow: 1;
 }
+
 .navbar__title {
   font-weight: bold;
   font-size: 18px;
   margin-bottom: 4px;
 }
+
 .navbar__subtitle {
   font-size: 12px;
   font-weight: 500;
 }
+
 .navbar__gamburger {
   flex-grow: 0;
   background: none;
   border: none;
+  padding: 0;
+
+  @include for-tablet {
+    padding: $m-tablet;
+    margin: -$m-tablet;
+  }
+
   &:hover {
     opacity: 0.8;
   }
