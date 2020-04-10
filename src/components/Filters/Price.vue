@@ -75,8 +75,14 @@ export default {
   border-radius: 50px;
   transition: all .3s;
 
-  &:hover {
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  @include for-desktop {
+    &:hover {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  @include for-tablet {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
   }
 }
 

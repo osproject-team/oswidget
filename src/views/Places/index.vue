@@ -8,6 +8,7 @@
         :color="colors[index]"
         v-for="(place, key) in level.seats"
         :key="key"
+        @selectedPlace="setOrder"
       />
     </g>
   </Scheme>
@@ -47,15 +48,19 @@ export default {
       ],
     };
   },
-  methods: {},
+  methods: {
+    setOrder(order) {
+      console.log(order);
+    },
+  },
 };
 </script>
 
 <style scoped lang="scss">
 .wrapper {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #F7F7F7 79.17%), #FFFFFF;
-  height: 95vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

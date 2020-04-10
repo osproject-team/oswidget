@@ -33,16 +33,36 @@ export default {
     background: $gray-light;
     border-top: 1px solid #e5e5e5;
     display: flex;
+
+    @include for-tablet {
+      height: 160px;
+    }
   }
 
   .control__wrapper {
-    padding: 30px;
+    padding: $m-desktop;
     flex-grow: 1;
+
+    @include for-tablet {
+      padding: $m-tablet;
+    }
+
+    @include for-phone {
+      padding: $m-phone;
+    }
   }
 
   .control__buttons {
     display: flex;
-    margin-top: 30px;
+    margin-top: $m-desktop;
+
+    @include for-tablet {
+      margin-top: $m-tablet;
+    }
+
+    @include for-phone {
+      margin-top: $m-phone;
+    }
 
     .button {
       flex-grow: 1;

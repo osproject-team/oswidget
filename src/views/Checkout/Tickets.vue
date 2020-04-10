@@ -105,14 +105,19 @@ export default {
 </script>
 <style scoped lang="scss">
   .tickets {
-    margin: 30px 0;
-    padding: 0 30px;
+    margin: $m-desktop 0;
+    padding: 0 $m-desktop;
     min-height: 15px;
     background: white;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.10);
     border-radius: 10px;
     transition: all .5s;
     overflow: hidden;
+
+    @include for-tablet {
+      margin: $m-tablet 0;
+      padding: 0 $m-tablet;
+    }
   }
   .tickets-active {
     padding-bottom: 0;

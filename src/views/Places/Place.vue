@@ -1,13 +1,14 @@
 <template>
   <circle
     :class="{ 'place': place.active }"
-    :r="sizePlace"
+    :r="radius"
     :cx="place.x_coord"
     :cy="place.y_coord"
-    :fill="colorPlace"
-    @mouseover="changeSize(true)"
-    @mouseleave="changeSize(false)"
-    @click="selectedPlace"
+    :fill="color"
+    @mouseover="hovered = true"
+    @mouseleave="hovered = false"
+    @click="selectPlace"
+    ref="place"
   />
 </template>
 
@@ -21,34 +22,26 @@ export default {
     },
     color: {
       type: String,
-      default: '#DDD',
+      default: '#ddd',
     },
   },
-  computed: {},
+  computed: {
+    radius() {
+      if (this.selected || this.hovered) return 10;
+      if (this.place.active) return 7;
+      return 4;
+    },
+  },
   data() {
     return {
-      sizePlace: 4,
-      colorPlace: '#DDD',
+      selected: false,
+      hovered: false,
     };
   },
-  mounted() {
-    this.setParam();
-  },
   methods: {
-    setParam() {
-      if (this.place.active) {
-        this.sizePlace = 7;
-        this.colorPlace = this.color;
-      }
-    },
-    changeSize(is) {
-      if (this.place.active) {
-        if (is) this.sizePlace = 10;
-        else this.sizePlace = 7;
-      }
-    },
-    selectedPlace() {
-      this.$emit('selectedPlace', this.place);
+    selectPlace() {
+      if (!this.selected) this.$emit('selectedPlace', this.place);
+      this.selected = !this.selected;
     },
   },
 };

@@ -13,6 +13,14 @@ $font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 
 $navbarHeight: 65px;
 
-// :export {
-//   sideBar: $red;
-// }
+$controlHeight-desktop: 195px;
+$controlHeight-tablet: 185px;
+$controlHeight-phone: 175px;
+
+$m-desktop: 30px;
+$m-tablet: 20px;
+$m-phone: 15px;
+
+$logoIndex-phone: 0;
+$logoIndex-desktop: 2;
+$sidebarIndex: 3;
